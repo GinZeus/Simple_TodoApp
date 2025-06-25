@@ -13,7 +13,7 @@ export const TodoProvider = ({ children }) => {
 
   useEffect(() => {
     fetchTodos();
-  }, []);
+  }, [todos]);
 
   return (
     <TodoContext.Provider value={{ todos, fetchTodos }}>

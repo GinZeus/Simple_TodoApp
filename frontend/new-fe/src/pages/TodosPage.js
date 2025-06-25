@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
 import { useNavigate } from "react-router-dom";
 import * as todoService from "../services/todoService";
@@ -14,9 +14,6 @@ const TodosPage = () => {
     await todoService.deleteTodo(id);
   };
 
-  useEffect(() => {
-    fetchTodos();
-  }, [todos]);
   const filteredTodos = todos.filter((todo) => {
     if (filter === "completed") return todo.completed;
     if (filter === "incomplete") return !todo.completed;
